@@ -1,0 +1,73 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Portal da Residência!
+  </h1>
+</div>
+
+<div>
+  <h1>
+    Residentes
+  </h1>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Matricula</th>
+    </tr>
+    <tr *ngFor="let residente of residentes">
+      <td>{{residente.nome}}</td>
+      <td>{{residente.matricula}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <h1>
+    Entrar
+  </h1>
+  <label>Matrícula</label>
+  <input type="text" #matriculaEntrada>
+  <button (click)="entrar(matriculaEntrada.value)">OK</button>
+</div>
+
+<div>
+    <h1>
+      Sair
+    </h1>
+    <label>Matrícula</label>
+    <input type="text" #matriculaSaida>
+    <button (click)="sair(matriculaSaida.value)">OK</button>
+  </div>
+
+<div>
+    <h1>
+      Cadastrar
+    </h1>
+    <label>Nome</label>
+    <input type="text" #nomeCad>
+    <label>Matrícula</label>
+    <input type="text" #matriculaCad>
+    <button (click)="cadastrar(nomeCad.value,matriculaCad.value)">OK</button>
+  </div>
+
+  <div>
+      <h1>
+        Histórico
+      </h1>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Matrícula</th>
+          <th>Data</th>
+          <th>Entrada</th>
+          <th>Saida</th>
+        </tr>
+        <tr *ngFor="let ponto of pontos">
+          <td>{{ponto.id.residente.nome}}</td>
+          <td>{{ponto.id.residente.matricula}}</td>
+          <td>{{ponto.id.data}}</td>
+          <td>{{ponto.entrada}}</td>
+          <td>{{ponto.saida}}</td>
+        </tr>
+      </table>
+    </div>
